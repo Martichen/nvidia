@@ -2,9 +2,31 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
 nav { background: #24292f; padding: 1em 0; }
 nav ul { list-style: none; display: flex; justify-content: center; margin: 0; padding: 0; }
 nav ul li { margin: 0 1.5em; }
-nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-nav ul li a:hover { text-decoration: underline; }
-section { max-width: 800px; margin: 2em auto; padding: 1em; }
+nav ul li a {
+    color: #76b900;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    color: #5a8c00;
+    text-decoration: underline;
+}
+section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+section.oculto {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
 h1, h2 { color: #76b900; }
 footer { text-align: center; padding: 1em 0; background: #f4f4f4; color: #333; }
 .btn-link {
@@ -46,3 +68,4 @@ form button:hover { background: #5a8c00; }
     0%, 100% { transform: translateY(0);}
     50% { transform: translateY(10px);}
 }
+
