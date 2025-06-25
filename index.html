@@ -9,20 +9,24 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#historia">Historia</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#innovacion">Innovación</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#inicio" onclick="mostrarSeccion('inicio'); return false;">Inicio</a></li>
+            <li><a href="#historia" onclick="mostrarSeccion('historia'); return false;">Historia</a></li>
+            <li><a href="#productos" onclick="mostrarSeccion('productos'); return false;">Productos</a></li>
+            <li><a href="#innovacion" onclick="mostrarSeccion('innovacion'); return false;">Innovación</a></li>
+            <li><a href="#contacto" onclick="mostrarSeccion('contacto'); return false;">Contacto</a></li>
         </ul>
     </nav>
 
-    <section id="inicio">
+    <!-- Página de inicio principal -->
+    <section id="inicio" class="inicio-section">
         <h1>Bienvenido a NVIDIA</h1>
         <p>NVIDIA es líder mundial en computación acelerada y gráficos, impulsando la innovación en inteligencia artificial, gaming, centros de datos y más.</p>
-        <a class="btn-link" href="https://www.nvidia.com/" target="_blank">Ir a la página oficial de NVIDIA</a>
+        <div class="scroll-down">
+            <a href="#historia" onclick="mostrarSeccion('historia'); return false;" title="Ir a los apartados"><span>&#8595;</span></a>
+        </div>
     </section>
 
+    <!-- Apartados de la página, accesibles desde el menú -->
     <section id="historia">
         <h2>Historia</h2>
         <p>Fundada en 1993 por Jensen Huang, Chris Malachowsky y Curtis Priem, NVIDIA revolucionó la industria de los gráficos con la introducción de la GPU en 1999. Desde entonces, ha liderado avances en gráficos, IA y computación de alto rendimiento.</p>
@@ -56,10 +60,30 @@
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+        <a class="btn-link" href="https://www.nvidia.com/" target="_blank">Ir a la página oficial de NVIDIA</a>
     </section>
 
     <footer>
-        &copy; 2024 Página no oficial de NVIDIA. Solo para fines educativos.
+        &copy; 2024 Página no oficial de NVIDIA. Esta pagina web es solo para fines educativos.
     </footer>
+    <script>
+        // Mostrar solo la sección seleccionada
+        function mostrarSeccion(id) {
+            const secciones = document.querySelectorAll('section');
+            secciones.forEach(sec => {
+                if (sec.id === id) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+            // Opcional: scroll al top
+            window.scrollTo(0, 0);
+        }
+        // Mostrar solo la sección de inicio al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarSeccion('inicio');
+        });
+    </script>
 </body>
 </html>
