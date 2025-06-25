@@ -22,3 +22,27 @@ form label { display: block; margin-top: 1em; }
 form input, form textarea { width: 100%; padding: 0.5em; margin-top: 0.5em; }
 form button { margin-top: 1em; background: #76b900; color: #fff; border: none; padding: 0.7em 1.5em; border-radius: 4px; cursor: pointer; }
 form button:hover { background: #5a8c00; }
+.inicio-section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f8faf6;
+    border-bottom: 2px solid #76b900;
+    position: relative;
+}
+.scroll-down {
+    margin-top: 2em;
+}
+.scroll-down a {
+    font-size: 2em;
+    color: #76b900;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(10px);}
+}
